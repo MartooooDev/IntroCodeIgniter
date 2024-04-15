@@ -28,10 +28,13 @@ if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
 
 // Path to the front controller (this file)
 define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
+//Pegando diretório atual e coloca uma barra no final
+//(/public/)
 
 // Ensure the current directory is pointing to the front controller's directory
 if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
-    chdir(FCPATH);
+    chdir(FCPATH); 
+    //garante que o diretório de trabalho atual é o do FCPATH, ou seja, caso o diretório atual (getcwd()) não seja o diretório apontado acima (/public/), ele será modificado para estar nesse diretório.
 }
 
 /*
@@ -54,3 +57,5 @@ $paths = new Config\Paths();
 require $paths->systemDirectory . '/Boot.php';
 
 exit(CodeIgniter\Boot::bootWeb($paths));
+
+//Arquivo de inicialização de todos os parâmetros do codeIgniter4
