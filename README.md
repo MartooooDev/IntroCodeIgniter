@@ -70,3 +70,9 @@ class Pages extends BaseController{
 }
 ?>
 ```
+
+Here we created a class named Pages with one index method, to show the CodeIgniter welcome page (the same as in `Home.php`), and the view method, that accepts one argument named `$page`.
+
+This class extends BaseController, meaning that it imports all methods and properties defined on that class (Controller/BaseController.php).
+
+Controllers are the center of every request on the system
